@@ -2,7 +2,7 @@
 
 **RequireKTX** is a collection of small utility functions to make it easier to deal with some otherwise nullable APIs on Android, using the same idea as [`requireContext`](https://developer.android.com/reference/androidx/fragment/app/Fragment.html#requireContext()), [`requireArguments`](https://developer.android.com/reference/androidx/fragment/app/Fragment.html#requireArguments()), and other similar Android SDK methods.
 
-For example, take the example of grabbing a Fragment argument bundle and reading a String ID from it that should always be there: you have two choices, and none of them are great: 
+Take the example of grabbing a Fragment argument bundle and reading a String ID from it that should always be there: you have two choices, and none of them are great: 
 
 ```kotlin
 // Nullable return type, have to do null handling
@@ -24,7 +24,7 @@ These methods in the library will throw an `IllegalArgumentException` if the key
 
 ---
 
-To make the nullable case more obvious and explicit, RequireKTX also include `getOrNull` style methods for everything that it covers with `require` style methods. These match the conventions of the Kotlin standard library, and can make it easier to express that you want to get a `null` value if a value for a key couldn't be fetched (doesn't exist, or is the wrong type).
+To make the nullable case more obvious and explicit, RequireKTX also includes `getOrNull` style methods for everything that it covers with `require` style methods. These match the conventions of the Kotlin standard library, and can make it easier to express that you want to get a `null` value if a value for a key couldn't be fetched (doesn't exist, or is the wrong type).
 
 ```kotlin
 val userId: String? = requireArguments().getStringOrNull(ARG_USERID_KEY)
