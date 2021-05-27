@@ -1,4 +1,4 @@
-rootProject.name = "RequireKTX"
+rootProject.name = "requireKTX"
 
 include ':app'
 

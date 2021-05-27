@@ -1,6 +1,6 @@
-# RequireKTX
+# requireKTX
 
-**RequireKTX** is a collection of small utility functions to make it easier to deal with some otherwise nullable APIs on Android, using the same idea as [`requireContext`](https://developer.android.com/reference/androidx/fragment/app/Fragment.html#requireContext()), [`requireArguments`](https://developer.android.com/reference/androidx/fragment/app/Fragment.html#requireArguments()), and other similar Android SDK methods.
+**requireKTX** is a collection of small utility functions to make it easier to deal with some otherwise nullable APIs on Android, using the same idea as [`requireContext`](https://developer.android.com/reference/androidx/fragment/app/Fragment.html#requireContext()), [`requireArguments`](https://developer.android.com/reference/androidx/fragment/app/Fragment.html#requireArguments()), and other similar Android SDK methods.
 
 Take the example of grabbing a Fragment argument bundle and reading a String ID from it that should always be there: you have two choices, and none of them are great: 
 
@@ -14,7 +14,7 @@ val id: String = requireArguments().getString(ARG_ID_KEY, "")
 if (id == "") { ... } // ... and check that you didn't accidentally use the default value
 ```
 
-With RequireKTX, you can demand that a value be there, or otherwise just get an exception:
+With requireKTX, you can demand that a value be there, or otherwise just get an exception:
 
 ```kotlin
 val id: String = requireArguments().requireString(ARG_ID_KEY)
@@ -24,7 +24,7 @@ These methods in the library will throw an `IllegalArgumentException` if the key
 
 ---
 
-To make the nullable case more obvious and explicit, RequireKTX also includes `getOrNull` style methods for everything that it covers with `require` style methods. These match the conventions of the Kotlin standard library, and can make it easier to express that you want to get a `null` value if a value for a key couldn't be fetched (doesn't exist, or is the wrong type).
+To make the nullable case more obvious and explicit, requireKTX also includes `getOrNull` style methods for everything that it covers with `require` style methods. These match the conventions of the Kotlin standard library, and can make it easier to express that you want to get a `null` value if a value for a key couldn't be fetched (doesn't exist, or is the wrong type).
 
 ```kotlin
 val userId: String? = requireArguments().getStringOrNull(ARG_USERID_KEY)
