@@ -8,7 +8,8 @@ For example, take the example of grabbing a Fragment argument bundle and reading
 // Nullable return type, have to do null handling
 val id: String = requireArguments().getString(ARG_ID_KEY)!!
 
-// Platform return type, have to explicitly type as non-null, plus provide a meaningless default value that will never be used 
+// Platform return type, have to explicitly type as non-null, plus provide a meaningless 
+// default value that should never be used 
 val id: String = requireArguments().getString(ARG_ID_KEY, "")
 if (id == "") { ... } // ... and check that you didn't accidentally use the default value
 ```
