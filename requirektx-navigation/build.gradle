@@ -42,7 +42,7 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 }
 
 dependencies {
-    implementation project(":requirektx-bundle")
+    api project(":requirektx-bundle")
     implementation "androidx.navigation:navigation-runtime:2.3.5"
     testImplementation 'junit:junit:4.13.2'
 }
