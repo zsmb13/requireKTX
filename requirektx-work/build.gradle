@@ -48,3 +48,11 @@ dependencies {
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junit_version"
     testImplementation "org.junit.jupiter:junit-jupiter-params:$junit_version"
 }
+
+ext {
+    PUBLISH_GROUP_ID = 'co.zsmb'
+    PUBLISH_ARTIFACT_ID = 'requirektx-work'
+    PUBLISH_VERSION = requirektx_version
+}
+
+apply from: "${rootDir}/scripts/publish-module.gradle"

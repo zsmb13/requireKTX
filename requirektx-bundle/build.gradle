@@ -45,3 +45,11 @@ dependencies {
     testImplementation 'org.robolectric:robolectric:4.5.1'
     testImplementation 'junit:junit:4.13.2'
 }
+
+ext {
+    PUBLISH_GROUP_ID = 'co.zsmb'
+    PUBLISH_ARTIFACT_ID = 'requirektx-bundle'
+    PUBLISH_VERSION = requirektx_version
+}
+
+apply from: "${rootDir}/scripts/publish-module.gradle"
