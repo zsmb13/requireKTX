@@ -2,6 +2,15 @@
 
 **requireKTX** is a collection of small utility functions to make it easier to deal with some otherwise nullable APIs on Android, using the same idea as [`requireContext`](https://developer.android.com/reference/androidx/fragment/app/Fragment.html#requireContext()), [`requireArguments`](https://developer.android.com/reference/androidx/fragment/app/Fragment.html#requireArguments()), and other similar Android SDK methods.
 
+Types that requireKTX provides extensions for:
+
+- [Bundle](#bundle)
+- [Intent](#intent)
+- [NavBackStackEntry](#navbackstackentry)
+- [WorkManager Data](#workmanager-data)
+
+### Why?
+
 Take the example of grabbing a Fragment argument bundle and reading a String ID from it that should always be there: you have two choices, and none of them are great: 
 
 ```kotlin
@@ -54,16 +63,86 @@ dependencies {
 
 ### Bundle
 
-TODO
+Given a `Bundle`, you can require the following types of values:
+
+```
+bundle.requireBoolean()
+bundle.requireInt()
+bundle.requireLong()
+bundle.requireString()
+bundle.requireParcelable()
+bundle.requireSerializable()
+```
 
 ### Intent
 
-TODO
+Given a `Intent`, you can require its extras `Bundle` (and then require values from it as seen above):
+
+```kotlin
+val extras: Bundle = intent.requireExtras()
+```
+
+Or you can require specific extras directly for various types of values:
+
+```kotlin
+// Primitives (examples)
+intent.requireBooleanExtra()
+intent.requireByteExtra()
+intent.requireCharExtra()
+intent.requireDoubleExtra()
+intent.requireFloatExtra()
+
+// Reference types
+intent.requireStringExtra()
+intent.requireBundleExtra()
+intent.requireCharSequenceExtra()
+intent.requireParcelableExtra()
+intent.requireSerializableExtra()
+
+// Arrays (examples)
+intent.requireBooleanArrayExtra()
+intent.requireByteArrayExtra()
+intent.requireCharArrayExtra()
+intent.requireDoubleArrayExtra()
+intent.requireFloatArrayExtra()
+```
+
+... and more!
 
 ### NavBackStackEntry
 
-TODO
+The navigation module provides an extension to require the arguments of a `NavBackStackEntry`, same as you could do for a `Fragment`:
+
+```kotlin
+val args: Bundle = navBackStackEntry.requireArguments()
+```
 
 ### WorkManager Data
 
-TODO
+Given a WorkManager `Data` object (such as `inputData` inside a worker), you can require the following types of values:
+
+```kotlin
+class SomeWorker : Worker() {
+    override fun doWork(): Result {
+        // Values
+        inputData.requireBoolean()
+        inputData.requireByte()
+        inputData.requireDouble()
+        inputData.requireFloat()
+        inputData.requireInt()
+        inputData.requireLong()
+        inputData.requireString()
+
+        // Arrays
+        inputData.requireBooleanArray()
+        inputData.requireByteArray()
+        inputData.requireDoubleArray()
+        inputData.requireFloatArray()
+        inputData.requireIntArray()
+        inputData.requireLongArray()
+        inputData.requireStringArray()
+
+        // ...
+    }
+}
+```
