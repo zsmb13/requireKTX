@@ -31,7 +31,28 @@ To make the nullable case more obvious and explicit, requireKTX also includes `g
 val userId: String? = requireArguments().getStringOrNull("user_id")
 ``` 
 
-### Bundles
+### Dependencies
+
+requireKTX is available from MavenCentral.
+
+```groovy
+repositories {
+    mavenCentral()
+}
+```
+
+It's available in several artifacts which you can import depending on which types you want to get extensions for - see the module descriptions below for more info:
+
+```groovy
+dependencies {
+    implementation "co.zsmb:requirektx-bundle:1.1.0"
+    implementation "co.zsmb:requirektx-intent:1.1.0"
+    implementation "co.zsmb:requirektx-navigation:1.1.0"
+    implementation "co.zsmb:requirektx-work:1.1.0"
+}
+```
+
+### Bundle
 
 TODO
 
