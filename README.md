@@ -9,7 +9,7 @@ Types that requireKTX provides extensions for:
 - [NavBackStackEntry](#navbackstackentry)
 - [WorkManager Data](#workmanager-data)
 
-### Why?
+## Why?
 
 Take the example of grabbing a Fragment argument bundle and reading a String ID from it that should always be there: you have two choices, and none of them are great: 
 
@@ -38,7 +38,7 @@ To make the nullable case more obvious and explicit, requireKTX also includes `g
 val userId: String? = requireArguments().getStringOrNull("user_id")
 ``` 
 
-### Dependencies
+## Dependencies
 
 requireKTX is available from MavenCentral.
 
@@ -58,6 +58,8 @@ dependencies {
     implementation "co.zsmb:requirektx-work:1.1.0"
 }
 ```
+
+## Available modules and extensions
 
 ### Bundle
 
@@ -145,7 +147,7 @@ class SomeWorker : Worker() {
 }
 ```
 
-### License
+## License
 
     Copyright 2021 Márton Braun
 
