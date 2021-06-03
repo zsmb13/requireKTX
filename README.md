@@ -5,32 +5,37 @@
 Take the example of grabbing a Fragment argument bundle and reading a String ID from it that should always be there: you have two choices, and none of them are great: 
 
 ```kotlin
-// Nullable return type, have to do null handling
-val id: String = requireArguments().getString(ARG_ID_KEY)!!
+// Providing no default value
+// Results in a nullable return type, caller has to do null handling
+val id: String = requireArguments().getString("user_id")!!
 
-// Platform return type, have to explicitly type as non-null, plus provide a meaningless 
-// default value that should never be used 
-val id: String = requireArguments().getString(ARG_ID_KEY, "")
-if (id == "") { ... } // ... and check that you didn't accidentally use the default value
+// Providing a (meaningless) default value
+// Results in a platform return type, caller has to explicitly type as non-null
+val id: String = requireArguments().getString("user_id", "")
+if (id == "") { ... } // ... and check to avoid accidentally using the default value
 ```
 
-With requireKTX, you can demand that a value be there, or otherwise just get an exception:
+requireKTX provides methods such as `requireString` so that you can demand that a value be there, or otherwise get an exception:
 
 ```kotlin
-val id: String = requireArguments().requireString(ARG_ID_KEY)
+val id: String = requireArguments().requireString("user_id")
 ```
 
-These methods in the library will throw an `IllegalArgumentException` if the key is missing, and an `IllegalStateException` if the key is present, but the value associated with it is not the expected type.
+These methods in the library will throw meaningful exceptions based on the error that occurred - see the method docs for details.
 
 ---
 
-To make the nullable case more obvious and explicit, requireKTX also includes `getOrNull` style methods for everything that it covers with `require` style methods. These match the conventions of the Kotlin standard library, and can make it easier to express that you want to get a `null` value if a value for a key couldn't be fetched (doesn't exist, or is the wrong type).
+To make the nullable case more obvious and explicit, requireKTX also includes `getOrNull` style methods for everything that it covers with `require` style methods. These match the conventions of the Kotlin Standard Library, and can make it clearer that `null` is returned if a value for a key couldn't be fetched.
 
 ```kotlin
-val userId: String? = requireArguments().getStringOrNull(ARG_USERID_KEY)
+val userId: String? = requireArguments().getStringOrNull("user_id")
 ``` 
 
 ### Bundles
+
+TODO
+
+### Intent
 
 TODO
 
