@@ -49,7 +49,7 @@ dependencies {
 
 ext {
     PUBLISH_GROUP_ID = 'co.zsmb'
-    PUBLISH_ARTIFACT_ID = 'requirektx-bundle'
+    PUBLISH_ARTIFACT_ID = 'requirektx-intent'
     PUBLISH_VERSION = requirektx_version
 }
 
