@@ -54,10 +54,10 @@ It's available in several artifacts which you can import depending on which type
 
 ```groovy
 dependencies {
-    implementation "co.zsmb:requirektx-bundle:1.1.0"
-    implementation "co.zsmb:requirektx-intent:1.1.0"
-    implementation "co.zsmb:requirektx-navigation:1.1.0"
-    implementation "co.zsmb:requirektx-work:1.1.0"
+    implementation "co.zsmb:requirektx-bundle:1.2.0"
+    implementation "co.zsmb:requirektx-intent:1.2.0"
+    implementation "co.zsmb:requirektx-navigation:1.2.0"
+    implementation "co.zsmb:requirektx-work:1.2.0"
 }
 ```
 
