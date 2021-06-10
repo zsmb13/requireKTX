@@ -32,7 +32,9 @@ val id: String = requireArguments().requireString("user_id")
 
 These methods in the library will throw meaningful exceptions based on the error that occurred - see the method docs for details.
 
-To make the nullable case more obvious and explicit, requireKTX also includes `getOrNull` style methods for everything that it covers with `require` style methods. These match the conventions of the Kotlin Standard Library, and can make it clearer that `null` is returned if a value for a key couldn't be fetched.
+### getOrNull
+
+To make the nullable case more obvious and explicit, requireKTX **also includes `getOrNull` style methods for everything that it covers with `require` style methods**. These match the conventions of the Kotlin Standard Library, and can make it clearer that `null` is returned if a value for a key couldn't be fetched.
 
 ```kotlin
 val userId: String? = requireArguments().getStringOrNull("user_id")
@@ -66,13 +68,29 @@ dependencies {
 Given a `Bundle`, you can require the following types of values:
 
 ```
+// Primitives (examples)
 bundle.requireBoolean()
-bundle.requireInt()
-bundle.requireLong()
+bundle.requireByte()
+bundle.requireChar()
+bundle.requireDouble()
+bundle.requireFloat()
+
+// Reference types
 bundle.requireString()
+bundle.requireBundle()
+bundle.requireCharSequence()
 bundle.requireParcelable()
 bundle.requireSerializable()
+
+// Arrays (examples)
+bundle.requireBooleanArray()
+bundle.requireByteArray()
+bundle.requireCharArray()
+bundle.requireDoubleArray()
+bundle.requireFloatArray()
 ```
+
+... and many more!
 
 ### Intent
 
@@ -107,7 +125,7 @@ intent.requireDoubleArrayExtra()
 intent.requireFloatArrayExtra()
 ```
 
-... and more!
+... and many more!
 
 ### NavBackStackEntry
 
