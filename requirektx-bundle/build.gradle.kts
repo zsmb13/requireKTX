@@ -1,18 +1,10 @@
 plugins {
-    alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.requireKtxLibrary)
 }
 
-kotlin {
-    androidTarget {
-        publishLibraryVariants("release")
-        compilations.all {
-            kotlinOptions {
-                jvmTarget = "17"
-            }
-        }
-    }
+android.namespace = "co.zsmb.requirektx.bundle"
 
+kotlin {
     sourceSets {
         commonMain.dependencies {}
         commonTest.dependencies {
@@ -24,24 +16,5 @@ kotlin {
                 implementation(libs.junit)
             }
         }
-    }
-
-    explicitApi()
-    compilerOptions {
-        freeCompilerArgs.add("-progressive")
-    }
-}
-
-android {
-    namespace = "co.zsmb.requirektx.bundle"
-    compileSdk = 34
-
-    defaultConfig {
-        minSdk = 21
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
     }
 }
