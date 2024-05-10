@@ -36,14 +36,21 @@ kotlin {
     // TODO progressive mode
 }
 
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
+
 android {
-    namespace = "co.zsmb.requirektx"
+    namespace = "co.zsmb.requirektx.work"
     compileSdk = 34
 
     defaultConfig {
         minSdk = 21
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFile("consumer-rules.pro")
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 }
