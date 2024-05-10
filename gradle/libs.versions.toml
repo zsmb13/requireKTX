@@ -4,12 +4,13 @@ androidTools = "31.4.0"
 appcompat = "1.6.1"
 constraintlayout = "2.1.4"
 core-ktx = "1.13.1"
+core-bundle = "1.0.0-rc01"
 junit = "4.13.2"
 junit-jupiter-api = "5.9.2"
 kotlin = "1.9.24"
 material = "1.12.0"
 maven-publish = "0.28.0"
-navigation-runtime = "2.7.7"
+navigation-runtime = "2.7.0-alpha04"
 robolectric = "4.12.1"
 work-runtime = "2.9.0"
 
@@ -18,6 +19,7 @@ android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", ve
 android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
 appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+core-bundle = { module = "org.jetbrains.androidx.core:core-bundle", version.ref = "core-bundle" }
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
 junit = { module = "junit:junit", version.ref = "junit" }
 junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit-jupiter-api" }
@@ -27,7 +29,7 @@ kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-p
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
 maven-publish = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "maven-publish" }
-navigation-runtime = { module = "androidx.navigation:navigation-runtime", version.ref = "navigation-runtime" }
+navigation-runtime = { module = "org.jetbrains.androidx.navigation:navigation-runtime", version.ref = "navigation-runtime" }
 robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
 work-runtime = { module = "androidx.work:work-runtime", version.ref = "work-runtime" }
 

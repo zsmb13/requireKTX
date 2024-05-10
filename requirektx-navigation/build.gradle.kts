@@ -8,12 +8,10 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api(project(":requirektx-bundle"))
+            implementation(libs.navigation.runtime)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
-        }
-        androidMain.dependencies {
-            implementation(libs.navigation.runtime)
         }
         val androidUnitTest by getting {
             dependencies {

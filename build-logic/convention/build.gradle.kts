@@ -23,9 +23,9 @@ dependencies {
 
 gradlePlugin {
     plugins {
-        register("androidLibrary") {
+        register("library") {
             id = "co.zsmb.requirektx.library"
-            implementationClass = "AndroidLibraryConventionPlugin"
+            implementationClass = "KmpLibraryConventionPlugin"
         }
     }
 }

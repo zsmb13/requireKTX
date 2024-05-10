@@ -8,7 +8,7 @@ import org.gradle.kotlin.dsl.configure
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
-class AndroidLibraryConventionPlugin : Plugin<Project> {
+class KmpLibraryConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
@@ -25,6 +25,29 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                             jvmTarget = JavaVersion.VERSION_1_8.toString()
                         }
                     }
+                }
+
+                if (target.isNotJustAndroid()) {
+                    jvm()
+                    iosArm64()
+                    iosSimulatorArm64()
+                    iosX64()
+                    js {
+                        browser()
+                        nodejs()
+                    }
+                    linuxArm64()
+                    linuxX64()
+                    macosArm64()
+                    macosX64()
+                    tvosArm64()
+                    tvosSimulatorArm64()
+                    tvosX64()
+                    wasmJs()
+                    watchosArm32()
+                    watchosArm64()
+                    watchosSimulatorArm64()
+                    watchosX64()
                 }
 
                 explicitApi()
@@ -79,3 +102,5 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
         }
     }
 }
+
+private fun Project.isNotJustAndroid() = hasProperty("android-only").not()
