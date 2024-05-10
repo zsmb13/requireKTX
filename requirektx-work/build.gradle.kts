@@ -1,20 +1,11 @@
 plugins {
-    alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.requireKtxLibrary)
 }
 
-kotlin {
-    androidTarget {
-        publishLibraryVariants("release")
-        compilations.all {
-            kotlinOptions {
-                jvmTarget = "17"
-            }
-        }
-    }
+android.namespace = "co.zsmb.requirektx.work"
 
+kotlin {
     sourceSets {
-        commonMain.dependencies {}
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
@@ -31,28 +22,8 @@ kotlin {
             }
         }
     }
-
-    explicitApi()
-    compilerOptions {
-        freeCompilerArgs.add("-progressive")
-    }
 }
 
 tasks.withType<Test> {
     useJUnitPlatform()
-}
-
-android {
-    namespace = "co.zsmb.requirektx.work"
-    compileSdk = 34
-
-    defaultConfig {
-        minSdk = 21
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFile("consumer-rules.pro")
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
 }
