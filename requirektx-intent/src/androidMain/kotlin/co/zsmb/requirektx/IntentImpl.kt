@@ -3,7 +3,7 @@
 package co.zsmb.requirektx
 
 import android.content.Intent
-import android.os.Bundle
+import androidx.core.bundle.Bundle
 
 /**
  * Returns the value associated with the given key.

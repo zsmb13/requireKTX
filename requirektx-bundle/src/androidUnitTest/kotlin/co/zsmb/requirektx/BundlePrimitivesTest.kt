@@ -1,6 +1,6 @@
 package co.zsmb.requirektx
 
-import android.os.Bundle
+import androidx.core.bundle.Bundle
 import org.junit.Assert
 import org.junit.Assert.assertEquals
 import org.junit.Test

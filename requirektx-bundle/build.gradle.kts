@@ -6,7 +6,9 @@ android.namespace = "co.zsmb.requirektx.bundle"
 
 kotlin {
     sourceSets {
-        commonMain.dependencies {}
+        commonMain.dependencies {
+            api("org.jetbrains.androidx.core:core-bundle:1.0.0-rc01")
+        }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }

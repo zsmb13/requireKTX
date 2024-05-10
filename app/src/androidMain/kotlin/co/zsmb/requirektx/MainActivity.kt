@@ -1,7 +1,7 @@
 package co.zsmb.requirektx
 
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import androidx.core.bundle.Bundle
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

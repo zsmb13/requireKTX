@@ -3,7 +3,7 @@
 package co.zsmb.requirektx
 
 import android.os.Binder
-import android.os.Bundle
+import androidx.core.bundle.Bundle
 import android.os.Parcelable
 import android.util.Size
 import android.util.SizeF

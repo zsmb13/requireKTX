@@ -8,6 +8,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api(project(":requirektx-bundle"))
+            implementation("org.jetbrains.androidx.core:core-bundle:1.0.0-rc01")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

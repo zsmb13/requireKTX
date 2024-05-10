@@ -2,9 +2,7 @@
 
 package co.zsmb.requirektx
 
-import android.os.Bundle
-import java.io.Serializable
-import android.os.Parcelable
+import androidx.core.bundle.Bundle
 
 /**
  * Returns the value associated with the given key.

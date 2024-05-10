@@ -2,11 +2,9 @@
 
 package co.zsmb.requirektx
 
-import android.content.Intent
-import android.os.Bundle
 import android.os.Parcelable
 import android.util.SparseArray
-import java.io.Serializable
+import androidx.core.bundle.Bundle
 
 /**
  * Returns the value associated with the given key.
