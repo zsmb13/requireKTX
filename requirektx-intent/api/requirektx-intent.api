@@ -1,0 +1,68 @@
+public final class co/zsmb/requirektx/IntentExtrasArrayListKt {
+	public static final fun getCharSequenceArrayListExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)Ljava/util/ArrayList;
+	public static final fun getIntegerArrayListExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)Ljava/util/ArrayList;
+	public static final fun getParcelableArrayListExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)Ljava/util/ArrayList;
+	public static final fun getStringArrayListExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)Ljava/util/ArrayList;
+	public static final fun requireCharSequenceArrayListExtra (Landroid/content/Intent;Ljava/lang/String;)Ljava/util/ArrayList;
+	public static final fun requireIntegerArrayListExtra (Landroid/content/Intent;Ljava/lang/String;)Ljava/util/ArrayList;
+	public static final fun requireParcelableArrayListExtra (Landroid/content/Intent;Ljava/lang/String;)Ljava/util/ArrayList;
+	public static final fun requireStringArrayListExtra (Landroid/content/Intent;Ljava/lang/String;)Ljava/util/ArrayList;
+}
+
+public final class co/zsmb/requirektx/IntentExtrasArraysKt {
+	public static final fun getBooleanArrayExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)[Z
+	public static final fun getByteArrayExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)[B
+	public static final fun getCharArrayExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)[C
+	public static final fun getCharSequenceArrayExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)[Ljava/lang/CharSequence;
+	public static final fun getDoubleArrayExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)[D
+	public static final fun getFloatArrayExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)[F
+	public static final fun getIntArrayExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)[I
+	public static final fun getLongArrayExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)[J
+	public static final fun getParcelableArrayExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)[Landroid/os/Parcelable;
+	public static final fun getShortArrayExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)[S
+	public static final fun getStringArrayExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)[Ljava/lang/String;
+	public static final fun requireBooleanArrayExtra (Landroid/content/Intent;Ljava/lang/String;)[Z
+	public static final fun requireByteArrayExtra (Landroid/content/Intent;Ljava/lang/String;)[B
+	public static final fun requireCharArrayExtra (Landroid/content/Intent;Ljava/lang/String;)[C
+	public static final fun requireCharSequenceArrayExtra (Landroid/content/Intent;Ljava/lang/String;)[Ljava/lang/CharSequence;
+	public static final fun requireDoubleArrayExtra (Landroid/content/Intent;Ljava/lang/String;)[D
+	public static final fun requireFloatArrayExtra (Landroid/content/Intent;Ljava/lang/String;)[F
+	public static final fun requireIntArrayExtra (Landroid/content/Intent;Ljava/lang/String;)[I
+	public static final fun requireLongArrayExtra (Landroid/content/Intent;Ljava/lang/String;)[J
+	public static final fun requireParcelableArrayExtra (Landroid/content/Intent;Ljava/lang/String;)[Landroid/os/Parcelable;
+	public static final fun requireShortArrayExtra (Landroid/content/Intent;Ljava/lang/String;)[S
+	public static final fun requireStringArrayExtra (Landroid/content/Intent;Ljava/lang/String;)[Ljava/lang/String;
+}
+
+public final class co/zsmb/requirektx/IntentExtrasPrimitivesKt {
+	public static final fun getBooleanExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)Ljava/lang/Boolean;
+	public static final fun getByteExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)Ljava/lang/Byte;
+	public static final fun getCharExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)Ljava/lang/Character;
+	public static final fun getDoubleExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)Ljava/lang/Double;
+	public static final fun getFloatExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)Ljava/lang/Float;
+	public static final fun getIntExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)Ljava/lang/Integer;
+	public static final fun getLongExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)Ljava/lang/Long;
+	public static final fun getShortExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)Ljava/lang/Short;
+	public static final fun requireBooleanExtra (Landroid/content/Intent;Ljava/lang/String;)Z
+	public static final fun requireByteExtra (Landroid/content/Intent;Ljava/lang/String;)B
+	public static final fun requireCharExtra (Landroid/content/Intent;Ljava/lang/String;)C
+	public static final fun requireDoubleExtra (Landroid/content/Intent;Ljava/lang/String;)D
+	public static final fun requireFloatExtra (Landroid/content/Intent;Ljava/lang/String;)F
+	public static final fun requireIntExtra (Landroid/content/Intent;Ljava/lang/String;)I
+	public static final fun requireLongExtra (Landroid/content/Intent;Ljava/lang/String;)J
+	public static final fun requireShortExtra (Landroid/content/Intent;Ljava/lang/String;)S
+}
+
+public final class co/zsmb/requirektx/IntentExtrasReferenceKt {
+	public static final fun getBundleExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)Landroid/os/Bundle;
+	public static final fun getCharSequenceExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)Ljava/lang/CharSequence;
+	public static final fun getStringExtraOrNull (Landroid/content/Intent;Ljava/lang/String;)Ljava/lang/String;
+	public static final fun requireBundleExtra (Landroid/content/Intent;Ljava/lang/String;)Landroid/os/Bundle;
+	public static final fun requireCharSequenceExtra (Landroid/content/Intent;Ljava/lang/String;)Ljava/lang/CharSequence;
+	public static final fun requireStringExtra (Landroid/content/Intent;Ljava/lang/String;)Ljava/lang/String;
+}
+
+public final class co/zsmb/requirektx/IntentKt {
+	public static final fun requireExtras (Landroid/content/Intent;)Landroid/os/Bundle;
+}
+

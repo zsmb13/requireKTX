@@ -2,6 +2,7 @@
 agp = "8.2.2"
 androidTools = "31.4.0"
 appcompat = "1.6.1"
+binary-compat-validator = "0.15.0-Beta.2"
 constraintlayout = "2.1.4"
 core-ktx = "1.13.1"
 core-bundle = "1.0.0-rc01"
@@ -36,6 +37,7 @@ work-runtime = { module = "androidx.work:work-runtime", version.ref = "work-runt
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
+binaryCompatValidator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "binary-compat-validator" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publish" }
 requireKtxLibrary = { id = "co.zsmb.requirektx.library", version = "unspecified" }

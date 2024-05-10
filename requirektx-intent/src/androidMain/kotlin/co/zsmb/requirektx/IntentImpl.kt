@@ -15,7 +15,7 @@ import androidx.core.bundle.Bundle
 @PublishedApi
 internal inline fun <reified T : Any> Intent.requireExtraImpl(key: String): T {
     val extras = checkNotNull(extras) { "Intent has no extras" }
-    if (key !in extras) {
+    if (!extras.containsKey(key)) {
         throw IllegalArgumentException("Intent extras has no key $key")
     }
     return extras[key] as? T ?: throw IllegalStateException("Wrong type found in Intent for key $key")
@@ -29,9 +29,3 @@ internal inline fun <reified T : Any> Intent.requireExtraImpl(key: String): T {
 internal inline fun <reified T : Any> Intent.getExtraOrNullImpl(key: String): T? {
     return extras?.get(key) as? T?
 }
-
-/**
- * Check if [this] Bundle contains the given [key].
- */
-@PublishedApi
-internal inline operator fun Bundle.contains(key: String): Boolean = containsKey(key)

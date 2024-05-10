@@ -12,9 +12,10 @@ import androidx.core.bundle.Bundle
  */
 @PublishedApi
 internal inline fun <reified T : Any> Bundle.requireImpl(key: String): T {
-    if (key !in this) {
+    if (!this.containsKey(key)) {
         throw IllegalArgumentException("Bundle has no key $key")
     }
+    @Suppress("DEPRECATION")
     return get(key) as? T ?: throw IllegalStateException("Wrong type found in Bundle for key $key")
 }
 
@@ -24,14 +25,9 @@ internal inline fun <reified T : Any> Bundle.requireImpl(key: String): T {
  */
 @PublishedApi
 internal inline fun <reified T : Any> Bundle.getOrNullImpl(key: String): T? {
-    if (key !in this) {
+    if (!this.containsKey(key)) {
         return null
     }
+    @Suppress("DEPRECATION")
     return get(key) as? T?
 }
-
-/**
- * Check if [this] Bundle contains the given [key].
- */
-@PublishedApi
-internal inline operator fun Bundle.contains(key: String): Boolean = containsKey(key)

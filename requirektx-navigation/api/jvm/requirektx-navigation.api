@@ -1,0 +1,4 @@
+public final class co/zsmb/requirektx/NavBackStackEntryKt {
+	public static final fun requireArguments (Landroidx/navigation/NavBackStackEntry;)Landroidx/core/bundle/Bundle;
+}
+

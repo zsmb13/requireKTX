@@ -1,0 +1,60 @@
+public final class co/zsmb/requirektx/BundleArrayListKt {
+	public static final fun getCharSequenceArrayListOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/util/ArrayList;
+	public static final fun getIntegerArrayListOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/util/ArrayList;
+	public static final fun getStringArrayListOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/util/ArrayList;
+	public static final fun requireCharSequenceArrayList (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/util/ArrayList;
+	public static final fun requireIntegerArrayList (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/util/ArrayList;
+	public static final fun requireStringArrayList (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/util/ArrayList;
+}
+
+public final class co/zsmb/requirektx/BundleArraysKt {
+	public static final fun getBooleanArrayOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)[Z
+	public static final fun getByteArrayOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)[B
+	public static final fun getCharArrayOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)[C
+	public static final fun getCharSequenceArrayOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)[Ljava/lang/CharSequence;
+	public static final fun getDoubleArrayOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)[D
+	public static final fun getFloatArrayOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)[F
+	public static final fun getIntArrayOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)[I
+	public static final fun getLongArrayOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)[J
+	public static final fun getShortArrayOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)[S
+	public static final fun getStringArrayOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)[Ljava/lang/String;
+	public static final fun requireBooleanArray (Landroidx/core/bundle/Bundle;Ljava/lang/String;)[Z
+	public static final fun requireByteArray (Landroidx/core/bundle/Bundle;Ljava/lang/String;)[B
+	public static final fun requireCharArray (Landroidx/core/bundle/Bundle;Ljava/lang/String;)[C
+	public static final fun requireCharSequenceArray (Landroidx/core/bundle/Bundle;Ljava/lang/String;)[Ljava/lang/CharSequence;
+	public static final fun requireDoubleArray (Landroidx/core/bundle/Bundle;Ljava/lang/String;)[D
+	public static final fun requireFloatArray (Landroidx/core/bundle/Bundle;Ljava/lang/String;)[F
+	public static final fun requireIntArray (Landroidx/core/bundle/Bundle;Ljava/lang/String;)[I
+	public static final fun requireLongArray (Landroidx/core/bundle/Bundle;Ljava/lang/String;)[J
+	public static final fun requireShortArray (Landroidx/core/bundle/Bundle;Ljava/lang/String;)[S
+	public static final fun requireStringArray (Landroidx/core/bundle/Bundle;Ljava/lang/String;)[Ljava/lang/String;
+}
+
+public final class co/zsmb/requirektx/BundlePrimitivesKt {
+	public static final fun getBooleanOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/lang/Boolean;
+	public static final fun getByteOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/lang/Byte;
+	public static final fun getCharOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/lang/Character;
+	public static final fun getDoubleOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/lang/Double;
+	public static final fun getFloatOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/lang/Float;
+	public static final fun getIntOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/lang/Integer;
+	public static final fun getLongOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/lang/Long;
+	public static final fun getShortOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/lang/Short;
+	public static final fun requireBoolean (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Z
+	public static final fun requireByte (Landroidx/core/bundle/Bundle;Ljava/lang/String;)B
+	public static final fun requireChar (Landroidx/core/bundle/Bundle;Ljava/lang/String;)C
+	public static final fun requireDouble (Landroidx/core/bundle/Bundle;Ljava/lang/String;)D
+	public static final fun requireFloat (Landroidx/core/bundle/Bundle;Ljava/lang/String;)F
+	public static final fun requireInt (Landroidx/core/bundle/Bundle;Ljava/lang/String;)I
+	public static final fun requireLong (Landroidx/core/bundle/Bundle;Ljava/lang/String;)J
+	public static final fun requireShort (Landroidx/core/bundle/Bundle;Ljava/lang/String;)S
+}
+
+public final class co/zsmb/requirektx/BundleReferenceKt {
+	public static final fun getBundleOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Landroidx/core/bundle/Bundle;
+	public static final fun getCharSequenceOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/lang/CharSequence;
+	public static final fun getStringOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/lang/String;
+	public static final fun requireBundle (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Landroidx/core/bundle/Bundle;
+	public static final fun requireCharSequence (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/lang/CharSequence;
+	public static final fun requireString (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/lang/String;
+}
+
