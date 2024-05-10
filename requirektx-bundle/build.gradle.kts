@@ -27,7 +27,9 @@ kotlin {
     }
 
     explicitApi()
-    // TODO progressive mode
+    compilerOptions {
+        freeCompilerArgs.add("-progressive")
+    }
 }
 
 android {
