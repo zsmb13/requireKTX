@@ -21,12 +21,12 @@ kotlin {
             implementation(libs.kotlin.test)
         }
         androidMain.dependencies {
-            implementation("androidx.navigation:navigation-runtime:2.3.5")
+            implementation(libs.navigation.runtime)
         }
         val androidUnitTest by getting {
             dependencies {
-                implementation("org.robolectric:robolectric:4.5.1")
-                implementation("junit:junit:4.13.2")
+                implementation(libs.robolectric)
+                implementation(libs.junit)
             }
         }
     }

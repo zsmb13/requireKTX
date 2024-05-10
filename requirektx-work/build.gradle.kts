@@ -19,15 +19,15 @@ kotlin {
             implementation(libs.kotlin.test)
         }
         androidMain.dependencies {
-            implementation("androidx.work:work-runtime:2.5.0")
+            implementation(libs.work.runtime)
         }
         val androidUnitTest by getting {
             dependencies {
-                implementation("org.robolectric:robolectric:4.5.1")
-                implementation("junit:junit:4.13.2")
-                implementation("org.junit.jupiter:junit-jupiter-api:5.7.1")
-                runtimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.1")
-                implementation("org.junit.jupiter:junit-jupiter-params:5.7.1")
+                implementation(libs.robolectric)
+                implementation(libs.junit)
+                implementation(libs.junit.jupiter.api)
+                runtimeOnly(libs.junit.jupiter.engine)
+                implementation(libs.junit.jupiter.params)
             }
         }
     }
@@ -42,5 +42,8 @@ android {
 
     defaultConfig {
         minSdk = 21
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFile("consumer-rules.pro")
     }
 }
