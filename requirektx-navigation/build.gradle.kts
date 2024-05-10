@@ -36,10 +36,14 @@ kotlin {
 }
 
 android {
-    namespace = "co.zsmb.requirektx"
+    namespace = "co.zsmb.requirektx.navigation"
     compileSdk = 34
 
     defaultConfig {
         minSdk = 21
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 }
