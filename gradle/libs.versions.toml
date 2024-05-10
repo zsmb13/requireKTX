@@ -8,6 +8,7 @@ junit = "4.13.2"
 junit-jupiter-api = "5.9.2"
 kotlin = "1.9.24"
 material = "1.12.0"
+maven-publish = "0.28.0"
 navigation-runtime = "2.7.7"
 robolectric = "4.12.1"
 work-runtime = "2.9.0"
@@ -25,6 +26,7 @@ junit-jupiter-params = { module = "org.junit.jupiter:junit-jupiter-params", vers
 kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
+maven-publish = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "maven-publish" }
 navigation-runtime = { module = "androidx.navigation:navigation-runtime", version.ref = "navigation-runtime" }
 robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
 work-runtime = { module = "androidx.work:work-runtime", version.ref = "work-runtime" }
@@ -33,4 +35,5 @@ work-runtime = { module = "androidx.work:work-runtime", version.ref = "work-runt
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publish" }
 requireKtxLibrary = { id = "co.zsmb.requirektx.library", version = "unspecified" }
