@@ -27,5 +27,9 @@ gradlePlugin {
             id = "co.zsmb.requirektx.library"
             implementationClass = "KmpLibraryConventionPlugin"
         }
+        register("publishing") {
+            id = "co.zsmb.requirektx.publishing"
+            implementationClass = "PublishingConventionPlugin"
+        }
     }
 }

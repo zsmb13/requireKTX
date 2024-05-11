@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.requireKtxLibrary)
+    alias(libs.plugins.requireKtxPublishing)
 }
 
 android.namespace = "co.zsmb.requirektx.work"

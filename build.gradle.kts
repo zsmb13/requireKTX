@@ -7,7 +7,10 @@ plugins {
 }
 
 apiValidation {
-    ignoredProjects += "app"
+    ignoredProjects += listOf(
+        "app",
+        "requirektx-test-helper",
+    )
     klib {
         enabled = true
         strictValidation = true

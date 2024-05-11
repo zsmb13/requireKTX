@@ -1,6 +1,4 @@
 import com.android.build.gradle.LibraryExtension
-import com.vanniktech.maven.publish.MavenPublishBaseExtension
-import com.vanniktech.maven.publish.SonatypeHost
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -16,7 +14,6 @@ class KmpLibraryConventionPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("com.android.library")
                 apply("org.jetbrains.kotlin.multiplatform")
-                apply("com.vanniktech.maven.publish")
             }
 
             configure<KotlinMultiplatformExtension> {
@@ -54,6 +51,19 @@ class KmpLibraryConventionPlugin : Plugin<Project> {
                     watchosX64()
                 }
 
+                val commonMain by sourceSets.commonMain
+                val jbMain by sourceSets.creating {
+                    dependsOn(commonMain)
+                }
+
+                targets.forEach { target ->
+                    if (target.platformType !in listOf(KotlinPlatformType.androidJvm, KotlinPlatformType.common)) {
+                        target.compilations.getByName("main").defaultSourceSet {
+                            dependsOn(jbMain)
+                        }
+                    }
+                }
+
                 val commonTest by sourceSets.commonTest
                 val jbTest by sourceSets.creating {
                     dependsOn(commonTest)
@@ -88,37 +98,6 @@ class KmpLibraryConventionPlugin : Plugin<Project> {
                 compileOptions {
                     sourceCompatibility = JavaVersion.VERSION_1_8
                     targetCompatibility = JavaVersion.VERSION_1_8
-                }
-            }
-
-            configure<MavenPublishBaseExtension> {
-                publishToMavenCentral(SonatypeHost.DEFAULT)
-                signAllPublications()
-
-                pom {
-                    name.set("requireKTX")
-                    description.set("Kotlin utilities for easily grabbing required values")
-                    inceptionYear.set("2021")
-                    url.set("https://github.com/zsmb13/requireKTX")
-                    licenses {
-                        license {
-                            name.set("The Apache License, Version 2.0")
-                            url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
-                            distribution.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
-                        }
-                    }
-                    developers {
-                        developer {
-                            id.set("zsmb13")
-                            name.set("Márton Braun")
-                            email.set("braunmarci@gmail.com")
-                        }
-                    }
-                    scm {
-                        connection.set("scm:git:github.com/zsmb13/requireKTX.git")
-                        developerConnection.set("scm:git:ssh://github.com/zsmb13/requireKTX.git")
-                        url.set("https://github.com/zsmb13/requireKTX/tree/main")
-                    }
                 }
             }
         }

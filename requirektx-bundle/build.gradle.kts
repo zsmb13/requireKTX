@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.requireKtxLibrary)
+    alias(libs.plugins.requireKtxPublishing)
 }
 
 android.namespace = "co.zsmb.requirektx.bundle"
@@ -11,11 +12,12 @@ kotlin {
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+            implementation(project(":requirektx-test-helper"))
         }
         val androidUnitTest by getting {
             dependencies {
-                implementation(libs.robolectric)
                 implementation(libs.junit)
+                implementation(libs.robolectric)
             }
         }
     }

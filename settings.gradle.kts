@@ -16,8 +16,11 @@ dependencyResolutionManagement {
 
 rootProject.name = "requireKTX"
 
-include(":app")
-include(":requirektx-bundle")
-include(":requirektx-intent")
-include(":requirektx-navigation")
-include(":requirektx-work")
+include(
+    ":app",
+    ":requirektx-test-helper",
+    ":requirektx-bundle",
+    ":requirektx-intent",
+    ":requirektx-navigation",
+    ":requirektx-work",
+)
