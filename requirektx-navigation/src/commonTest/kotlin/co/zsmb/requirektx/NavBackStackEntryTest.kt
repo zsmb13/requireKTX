@@ -5,7 +5,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
-class NavBackStackEntryTest {
+class NavBackStackEntryTest : RoboTest() {
     @Test
     fun testMissingArgs() {
         val entry = createNavBackstackEntry(arguments = null)
@@ -18,8 +18,8 @@ class NavBackStackEntryTest {
     @Test
     fun testPresentArgs() {
         val argBundle = Bundle().apply {
-//            putString("hello", "world")
-//            putInt("answer", 42)
+            putString("hello", "world")
+            putInt("answer", 42)
         }
 
         val entry = createNavBackstackEntry(arguments = argBundle)
