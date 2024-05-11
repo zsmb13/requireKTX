@@ -6,7 +6,6 @@ import org.gradle.kotlin.dsl.*
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformType
-import org.jetbrains.kotlin.gradle.testing.internal.KotlinTestReport
 
 class KmpLibraryConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -17,45 +16,19 @@ class KmpLibraryConventionPlugin : Plugin<Project> {
             }
 
             configure<KotlinMultiplatformExtension> {
+                // Create Kotlin Multiplatform targets
                 applyDefaultHierarchyTemplate()
-
-                androidTarget {
-                    publishLibraryVariants("release")
-                    compilations.all {
-                        kotlinOptions {
-                            jvmTarget = JavaVersion.VERSION_1_8.toString()
-                        }
-                    }
+                when {
+                    isAndroidOnly() -> configureAndroid()
+                    isCiTest() -> configureCiTestTargets()
+                    else -> configureAllTargets()
                 }
 
-                if (target.isNotJustAndroid()) {
-                    jvm()
-                    iosArm64()
-                    iosSimulatorArm64()
-                    iosX64()
-                    js {
-                        browser()
-                        nodejs()
-                    }
-                    linuxArm64()
-                    linuxX64()
-                    macosArm64()
-                    macosX64()
-                    tvosArm64()
-                    tvosSimulatorArm64()
-                    tvosX64()
-                    wasmJs()
-                    watchosArm32()
-                    watchosArm64()
-                    watchosSimulatorArm64()
-                    watchosX64()
-                }
-
+                // Create jbMain source set (all - android)
                 val commonMain by sourceSets.commonMain
                 val jbMain by sourceSets.creating {
                     dependsOn(commonMain)
                 }
-
                 targets.forEach { target ->
                     if (target.platformType !in listOf(KotlinPlatformType.androidJvm, KotlinPlatformType.common)) {
                         target.compilations.getByName("main").defaultSourceSet {
@@ -64,11 +37,11 @@ class KmpLibraryConventionPlugin : Plugin<Project> {
                     }
                 }
 
+                // Create jbTest source set (all - android)
                 val commonTest by sourceSets.commonTest
                 val jbTest by sourceSets.creating {
                     dependsOn(commonTest)
                 }
-
                 targets.forEach { target ->
                     if (target.platformType !in listOf(KotlinPlatformType.androidJvm, KotlinPlatformType.common)) {
                         target.compilations.getByName("test").defaultSourceSet {
@@ -77,13 +50,8 @@ class KmpLibraryConventionPlugin : Plugin<Project> {
                     }
                 }
 
-                val allTestsTask = tasks.findByName("allTests")
-                allTestsTask?.doFirst {
-                    (allTestsTask as KotlinTestReport).ignoreFailures = true
-                }
-
+                // Compiler settings
                 explicitApi()
-
                 @OptIn(ExperimentalKotlinGradlePluginApi::class)
                 compilerOptions {
                     freeCompilerArgs.add("-progressive")
@@ -102,6 +70,53 @@ class KmpLibraryConventionPlugin : Plugin<Project> {
             }
         }
     }
-}
 
-private fun Project.isNotJustAndroid() = hasProperty("android-only").not()
+    private fun KotlinMultiplatformExtension.configureAndroid() {
+        androidTarget {
+            publishLibraryVariants("release")
+            compilations.all {
+                kotlinOptions {
+                    jvmTarget = JavaVersion.VERSION_1_8.toString()
+                }
+            }
+        }
+    }
+
+    private fun KotlinMultiplatformExtension.configureCiTestTargets() {
+        configureAndroid()
+        jvm()
+        iosSimulatorArm64()
+        js {
+            browser()
+            nodejs()
+        }
+        macosArm64()
+    }
+
+    private fun KotlinMultiplatformExtension.configureAllTargets() {
+        configureAndroid()
+        jvm()
+        iosArm64()
+        iosSimulatorArm64()
+        iosX64()
+        js {
+            browser()
+            nodejs()
+        }
+        linuxArm64()
+        linuxX64()
+        macosArm64()
+        macosX64()
+        tvosArm64()
+        tvosSimulatorArm64()
+        tvosX64()
+        wasmJs()
+        watchosArm32()
+        watchosArm64()
+        watchosSimulatorArm64()
+        watchosX64()
+    }
+
+    private fun Project.isAndroidOnly() = hasProperty("android-only")
+    private fun Project.isCiTest() = System.getenv("IS_CI_TEST") != null || hasProperty("is-ci-test")
+}

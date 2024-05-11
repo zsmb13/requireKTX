@@ -14,12 +14,14 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: 21
-      - name: API check
-        run: ./gradlew apiCheck
       - name: Debug build
         run: ./gradlew assembleDebug --stacktrace
+      - name: API check
+        run: ./gradlew apiCheck
       - name: Unit test
-        run: ./gradlew allTests --stacktrace
+        run: ./gradlew allTests test --stacktrace
+        env:
+          IS_CI_TEST: yup
       - name: Upload test results
         uses: actions/upload-artifact@v4
         with:
