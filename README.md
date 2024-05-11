@@ -1,6 +1,6 @@
 # requireKTX
 
-**requireKTX** is a collection of small utility functions to make it easier to deal with some otherwise nullable APIs on Android and Kotlin Multiplatform, in the style of [`requireContext`](https://developer.android.com/reference/androidx/fragment/app/Fragment.html#requireContext()), [`requireArguments`](https://developer.android.com/reference/androidx/fragment/app/Fragment.html#requireArguments()), and other similar Android SDK methods.
+**requireKTX** is a collection of small utility functions to make it easier to work with **values that should always exist** on Android and Kotlin Multiplatform, in the style of [`requireContext`](https://developer.android.com/reference/androidx/fragment/app/Fragment.html#requireContext()), [`requireArguments`](https://developer.android.com/reference/androidx/fragment/app/Fragment.html#requireArguments()), and other similar Android SDK methods.
 
 Types that requireKTX provides extensions for:
 
@@ -14,18 +14,36 @@ Types that requireKTX provides extensions for:
 Take the example of grabbing a Bundle and reading a String ID from it that should always be there: the Bundle APIs give you a nullable result, which means you'll have to do some kind of null handling.
 
 ```kotlin
+// Without requireKTX 😥
 val id: String = argumentBundle.getString("user_id")!!
 ```
 
 The exception potentially thrown by this code also won't be too helpful in tracking down the problem, as it won't tell you details such as whether the value was missing, or if it was the wrong type for the request.
 
-Instead of using these methods, requireKTX provides extensions such as `requireString`, which you can use to *require* a value that must always be there. These methods give you non-nullable return types.
+Another problem with Bundles is accessing primitive values, as they're always returned as non-nullable, defaulting to `0` (or even worse, `false` for Booleans) if the key is not found or its associated value has the wrong type:
 
 ```kotlin
-val id: String = argumentBundle.requireString("user_id")
+val bundle = Bundle()
+bundle.putDouble("count", 123.0)
+
+// These both pass 😱
+assertEquals(0, bundle.getInt("count"))
+assertEquals(0, bundle.getInt("score"))
 ```
 
-If the value isn't available, these methods throw meaningful exceptions based on the error that occurred - see the method docs for details.
+This makes it difficult to know if what you received was a real `0` value, or if something silently went wrong.
+
+---
+
+Instead of using these methods, requireKTX provides extensions such as `requireString`, which you can use to *require* a value that must always be there:
+
+```kotlin
+// With requireKTX 🥳
+val id: String = argumentBundle.requireString("user_id")
+val count: Int = argumentBundle.requireInt("count")
+```
+
+These methods give you non-nullable return types. If the key isn't set or the value doesn't have the expected type, they throw meaningful exceptions based on the error that occurred. This is true for accessing primitive values as well.
 
 ### getOrNull
 
@@ -33,11 +51,12 @@ requireKTX **also includes `getOrNull` style methods for everything that it cove
 
 ```kotlin
 val userId: String? = requireArguments().getStringOrNull("user_id")
-``` 
+val count: Int? = requireArguments().getIntOrNull("count")
+```
 
 ## Dependencies
 
-requireKTX is available from MavenCentral.
+requireKTX is published on [Maven Central](https://repo1.maven.org/maven2/co/zsmb/).
 
 ```kotlin
 repositories {
@@ -45,7 +64,7 @@ repositories {
 }
 ```
 
-It's available in several artifacts which you can import depending on which types you want to get extensions for - see the module descriptions below for more info.
+There are several artifacts you can import depending on which types you want to get extensions for - see the module descriptions below to learn more.
 
 ```kotlin
 dependencies {
@@ -96,15 +115,15 @@ bundle.requireFloatArray()
 
 *The `requirektx-navigation` artifact works with the `androidx.navigation.NavBackStackEntry` type, available on Android and other Kotlin Multiplatform targets from `org.jetbrains.androidx.navigation:navigation-runtime`.*
 
-*This is compatible with both the [Jetpack Navigaton component on Android](https://developer.android.com/guide/navigation) (with or without Compose) and the [Compose Multiplatform navigation library](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-navigation-routing.html).*
+*This is compatible with both the [Jetpack Navigation component on Android](https://developer.android.com/guide/navigation) (with or without Compose) and the [Compose Multiplatform navigation library](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-navigation-routing.html).*
 
-To get
+To get the bundle of arguments from an entry, use `requireArguments`:
 
 ```kotlin
 val args: Bundle = navBackStackEntry.requireArguments()
 ```
 
-An example of using this with Compose, in combination with the [Bundle extensions](#bundle):
+Here's an example of using this with Compose, in combination with the [Bundle extensions](#bundle):
 
 ```kotlin
 composable("detail/{objectId}") { backStackEntry ->
