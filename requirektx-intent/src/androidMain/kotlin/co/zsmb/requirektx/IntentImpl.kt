@@ -18,6 +18,7 @@ internal inline fun <reified T : Any> Intent.requireExtraImpl(key: String): T {
     if (!extras.containsKey(key)) {
         throw IllegalArgumentException("Intent extras has no key $key")
     }
+    @Suppress("DEPRECATION")
     return extras[key] as? T ?: throw IllegalStateException("Wrong type found in Intent for key $key")
 }
 
@@ -27,5 +28,6 @@ internal inline fun <reified T : Any> Intent.requireExtraImpl(key: String): T {
  */
 @PublishedApi
 internal inline fun <reified T : Any> Intent.getExtraOrNullImpl(key: String): T? {
+    @Suppress("DEPRECATION")
     return extras?.get(key) as? T?
 }

@@ -11,7 +11,7 @@ import org.robolectric.RobolectricTestRunner
 import java.util.ArrayList
 
 @RunWith(RobolectricTestRunner::class)
-internal class BundleArrayListTest {
+internal class BundleArrayListTestAndroid {
 
     // Parcelables
     private val testParcelable1: Uri

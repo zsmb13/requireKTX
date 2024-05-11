@@ -1,14 +1,11 @@
 package co.zsmb.requirektx
 
 import androidx.core.bundle.Bundle
-import org.junit.Assert
-import org.junit.Assert.assertEquals
-import org.junit.Test
-import org.junit.runner.RunWith
-import org.robolectric.RobolectricTestRunner
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 
-@RunWith(RobolectricTestRunner::class)
-internal class BundlePrimitivesTest {
+internal class BundlePrimitivesTest : RoboTest() {
 
     private val testBundle = Bundle().apply {
         putBoolean("boolean", true)
@@ -31,10 +28,10 @@ internal class BundlePrimitivesTest {
         assertEquals(null, testBundle.getBooleanOrNull("invalid"))
 
         assertEquals(true, testBundle.requireBoolean("boolean"))
-        Assert.assertThrows(IllegalArgumentException::class.java) {
+        assertFailsWith<IllegalArgumentException> {
             testBundle.requireBoolean("invalid")
         }
-        Assert.assertThrows(IllegalStateException::class.java) {
+        assertFailsWith<IllegalStateException> {
             testBundle.requireBoolean("string")
         }
     }
@@ -46,10 +43,10 @@ internal class BundlePrimitivesTest {
         assertEquals(null, testBundle.getByteOrNull("invalid"))
 
         assertEquals(1.toByte(), testBundle.requireByte("byte"))
-        Assert.assertThrows(IllegalArgumentException::class.java) {
+        assertFailsWith<IllegalArgumentException> {
             testBundle.requireByte("invalid")
         }
-        Assert.assertThrows(IllegalStateException::class.java) {
+        assertFailsWith<IllegalStateException> {
             testBundle.requireByte("string")
         }
     }
@@ -61,10 +58,10 @@ internal class BundlePrimitivesTest {
         assertEquals(null, testBundle.getCharOrNull("invalid"))
 
         assertEquals('a', testBundle.requireChar("char"))
-        Assert.assertThrows(IllegalArgumentException::class.java) {
+        assertFailsWith<IllegalArgumentException> {
             testBundle.requireChar("invalid")
         }
-        Assert.assertThrows(IllegalStateException::class.java) {
+        assertFailsWith<IllegalStateException> {
             testBundle.requireChar("string")
         }
     }
@@ -76,10 +73,10 @@ internal class BundlePrimitivesTest {
         assertEquals(null, testBundle.getDoubleOrNull("invalid"))
 
         assertEquals(1.0, testBundle.requireDouble("double"), 0.0)
-        Assert.assertThrows(IllegalArgumentException::class.java) {
+        assertFailsWith<IllegalArgumentException> {
             testBundle.requireDouble("invalid")
         }
-        Assert.assertThrows(IllegalStateException::class.java) {
+        assertFailsWith<IllegalStateException> {
             testBundle.requireDouble("string")
         }
     }
@@ -91,10 +88,10 @@ internal class BundlePrimitivesTest {
         assertEquals(null, testBundle.getFloatOrNull("invalid"))
 
         assertEquals(1f, testBundle.requireFloat("float"))
-        Assert.assertThrows(IllegalArgumentException::class.java) {
+        assertFailsWith<IllegalArgumentException> {
             testBundle.requireFloat("invalid")
         }
-        Assert.assertThrows(IllegalStateException::class.java) {
+        assertFailsWith<IllegalStateException> {
             testBundle.requireFloat("string")
         }
     }
@@ -106,10 +103,10 @@ internal class BundlePrimitivesTest {
         assertEquals(null, testBundle.getIntOrNull("invalid"))
 
         assertEquals(1, testBundle.requireInt("int"))
-        Assert.assertThrows(IllegalArgumentException::class.java) {
+        assertFailsWith<IllegalArgumentException> {
             testBundle.requireInt("invalid")
         }
-        Assert.assertThrows(IllegalStateException::class.java) {
+        assertFailsWith<IllegalStateException> {
             testBundle.requireInt("string")
         }
     }
@@ -121,10 +118,10 @@ internal class BundlePrimitivesTest {
         assertEquals(null, testBundle.getLongOrNull("invalid"))
 
         assertEquals(1L, testBundle.requireLong("long"))
-        Assert.assertThrows(IllegalArgumentException::class.java) {
+        assertFailsWith<IllegalArgumentException> {
             testBundle.requireLong("invalid")
         }
-        Assert.assertThrows(IllegalStateException::class.java) {
+        assertFailsWith<IllegalStateException> {
             testBundle.requireLong("string")
         }
     }
@@ -136,10 +133,10 @@ internal class BundlePrimitivesTest {
         assertEquals(null, testBundle.getShortOrNull("invalid"))
 
         assertEquals(1.toShort(), testBundle.requireShort("short"))
-        Assert.assertThrows(IllegalArgumentException::class.java) {
+        assertFailsWith<IllegalArgumentException> {
             testBundle.requireShort("invalid")
         }
-        Assert.assertThrows(IllegalStateException::class.java) {
+        assertFailsWith<IllegalStateException> {
             testBundle.requireShort("string")
         }
     }

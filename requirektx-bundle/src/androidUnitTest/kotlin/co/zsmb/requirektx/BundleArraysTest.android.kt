@@ -12,7 +12,7 @@ import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 
 @RunWith(RobolectricTestRunner::class)
-internal class BundleArraysTest {
+internal class BundleArraysTestAndroid {
 
     // Parcelables
     private val testParcelable1: Uri

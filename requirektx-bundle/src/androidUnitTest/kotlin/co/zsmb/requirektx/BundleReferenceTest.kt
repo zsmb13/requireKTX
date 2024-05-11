@@ -13,7 +13,7 @@ import java.util.Calendar
 import java.util.UUID
 
 @RunWith(RobolectricTestRunner::class)
-internal class BundleReferenceTest {
+internal class BundleReferenceTestAndroid {
 
     // Parcelables
     private val testParcelable1: Uri

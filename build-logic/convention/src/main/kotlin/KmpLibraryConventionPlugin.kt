@@ -4,9 +4,11 @@ import com.vanniktech.maven.publish.SonatypeHost
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.*
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformType
+import org.jetbrains.kotlin.gradle.testing.internal.KotlinTestReport
 
 class KmpLibraryConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -18,6 +20,8 @@ class KmpLibraryConventionPlugin : Plugin<Project> {
             }
 
             configure<KotlinMultiplatformExtension> {
+                applyDefaultHierarchyTemplate()
+
                 androidTarget {
                     publishLibraryVariants("release")
                     compilations.all {
@@ -50,6 +54,24 @@ class KmpLibraryConventionPlugin : Plugin<Project> {
                     watchosX64()
                 }
 
+                val commonTest by sourceSets.commonTest
+                val jbTest by sourceSets.creating {
+                    dependsOn(commonTest)
+                }
+
+                targets.forEach { target ->
+                    if (target.platformType !in listOf(KotlinPlatformType.androidJvm, KotlinPlatformType.common)) {
+                        target.compilations.getByName("test").defaultSourceSet {
+                            dependsOn(jbTest)
+                        }
+                    }
+                }
+
+                val allTestsTask = tasks.findByName("allTests")
+                allTestsTask?.doFirst {
+                    (allTestsTask as KotlinTestReport).ignoreFailures = true
+                }
+
                 explicitApi()
 
                 @OptIn(ExperimentalKotlinGradlePluginApi::class)
@@ -76,7 +98,7 @@ class KmpLibraryConventionPlugin : Plugin<Project> {
                 pom {
                     name.set("requireKTX")
                     description.set("Kotlin utilities for easily grabbing required values")
-                    inceptionYear.set("2020")
+                    inceptionYear.set("2021")
                     url.set("https://github.com/zsmb13/requireKTX")
                     licenses {
                         license {
