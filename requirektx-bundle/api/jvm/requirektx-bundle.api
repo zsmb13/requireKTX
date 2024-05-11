@@ -1,5 +1,4 @@
 public final class co/zsmb/requirektx/BundleArrayListKt {
-	public static final fun getCharSequenceArrayListOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/util/ArrayList;
 	public static final fun getIntegerArrayListOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/util/ArrayList;
 	public static final fun getStringArrayListOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/util/ArrayList;
 	public static final fun requireCharSequenceArrayList (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/util/ArrayList;

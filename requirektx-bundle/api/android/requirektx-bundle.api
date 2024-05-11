@@ -1,5 +1,4 @@
 public final class co/zsmb/requirektx/BundleArrayListKt {
-	public static final fun getCharSequenceArrayListOrNull (Landroid/os/Bundle;Ljava/lang/String;)Ljava/util/ArrayList;
 	public static final fun getIntegerArrayListOrNull (Landroid/os/Bundle;Ljava/lang/String;)Ljava/util/ArrayList;
 	public static final fun getStringArrayListOrNull (Landroid/os/Bundle;Ljava/lang/String;)Ljava/util/ArrayList;
 	public static final fun requireCharSequenceArrayList (Landroid/os/Bundle;Ljava/lang/String;)Ljava/util/ArrayList;
@@ -8,6 +7,7 @@ public final class co/zsmb/requirektx/BundleArrayListKt {
 }
 
 public final class co/zsmb/requirektx/BundleArrayList_androidKt {
+	public static final fun getCharSequenceArrayListOrNull (Landroid/os/Bundle;Ljava/lang/String;)Ljava/util/ArrayList;
 	public static final fun getParcelableArrayListOrNull (Landroid/os/Bundle;Ljava/lang/String;)Ljava/util/ArrayList;
 	public static final fun requireParcelableArrayList (Landroid/os/Bundle;Ljava/lang/String;)Ljava/util/ArrayList;
 }
