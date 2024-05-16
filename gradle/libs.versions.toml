@@ -1,25 +1,25 @@
 [versions]
+androidx-activityCompose = "1.9.0"
 agp = "8.2.2"
 androidTools = "31.4.0"
 appcompat = "1.6.1"
 binary-compat-validator = "0.15.0-Beta.2"
-constraintlayout = "2.1.4"
+compose-multiplatform = "1.6.10-rc03"
 core-ktx = "1.13.1"
 core-bundle = "1.0.0-rc01"
 junit = "4.13.2"
 junit-jupiter-api = "5.9.2"
 kotlin = "2.0.0-RC3"
-material = "1.12.0"
 maven-publish = "0.28.0"
-navigation-runtime = "2.7.0-alpha04"
+navigationCompose = "2.7.0-alpha04"
 robolectric = "4.12.1"
 work-runtime = "2.9.0"
 
 [libraries]
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
 appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
 core-bundle = { module = "org.jetbrains.androidx.core:core-bundle", version.ref = "core-bundle" }
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
 junit = { module = "junit:junit", version.ref = "junit" }
@@ -28,9 +28,9 @@ junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", vers
 junit-jupiter-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junit-jupiter-api" }
 kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
-material = { module = "com.google.android.material:material", version.ref = "material" }
 maven-publish = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "maven-publish" }
-navigation-runtime = { module = "org.jetbrains.androidx.navigation:navigation-runtime", version.ref = "navigation-runtime" }
+navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
+navigation-runtime = { module = "org.jetbrains.androidx.navigation:navigation-runtime", version.ref = "navigationCompose" }
 robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
 work-runtime = { module = "androidx.work:work-runtime", version.ref = "work-runtime" }
 
@@ -38,7 +38,10 @@ work-runtime = { module = "androidx.work:work-runtime", version.ref = "work-runt
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 binaryCompatValidator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "binary-compat-validator" }
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publish" }
+
 requireKtxLibrary = { id = "co.zsmb.requirektx.library", version = "unspecified" }
 requireKtxPublishing = { id = "co.zsmb.requirektx.publishing", version = "unspecified" }

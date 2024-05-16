@@ -8,7 +8,7 @@ plugins {
 
 apiValidation {
     ignoredProjects += listOf(
-        "app",
+        "sample",
         "requirektx-test-helper",
     )
     klib {

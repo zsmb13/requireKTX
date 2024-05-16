@@ -17,7 +17,7 @@ dependencyResolutionManagement {
 rootProject.name = "requireKTX"
 
 include(
-    ":app",
+    ":sample",
     ":requirektx-test-helper",
     ":requirektx-bundle",
     ":requirektx-intent",

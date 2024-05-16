@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
+    alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.composeMultiplatform)
 }
 
 kotlin {
@@ -11,18 +13,32 @@ kotlin {
             }
         }
     }
+    
+    jvm("desktop")
 
     sourceSets {
-        androidMain.dependencies {
-            implementation(libs.core.ktx)
-            implementation(libs.appcompat)
-            implementation(libs.material)
-            implementation(libs.constraintlayout)
+        val desktopMain by getting
+        
+        commonMain.dependencies {
+            implementation(compose.runtime)
+            implementation(compose.foundation)
+            implementation(compose.material)
+            implementation(compose.ui)
+            implementation(compose.components.uiToolingPreview)
+
+            implementation(libs.navigation.compose)
 
             implementation(project(":requirektx-bundle"))
-            implementation(project(":requirektx-intent"))
             implementation(project(":requirektx-navigation"))
+        }
+        androidMain.dependencies {
+            implementation(project(":requirektx-intent"))
             implementation(project(":requirektx-work"))
+            
+            implementation(libs.androidx.activity.compose)
+        }
+        desktopMain.dependencies {
+            implementation(compose.desktop.currentOs)
         }
     }
 }
@@ -55,5 +71,11 @@ android {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+    }
+}
+
+compose.desktop {
+    application {
+        mainClass = "co.zsmb.requirektx.MainKt"
     }
 }

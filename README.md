@@ -123,13 +123,16 @@ To get the bundle of arguments from an entry, use `requireArguments`:
 val args: Bundle = navBackStackEntry.requireArguments()
 ```
 
-Here's an example of using this with Compose, in combination with the [Bundle extensions](#bundle):
+Here's an example of using this with Compose Navigation, in combination with the [Bundle extensions](#bundle):
 
 ```kotlin
-composable("detail/{objectId}") { backStackEntry ->
+composable(
+    "detail/{objectId}",
+    arguments = listOf(navArgument("objectId") { type = NavType.IntType }),
+) { backStackEntry ->
     val args = backStackEntry.requireArguments()
     val objectId = args.requireInt("objectId")
-    DetailScreen(navController, objectId)
+    // UI implementation
 }
 ```
 

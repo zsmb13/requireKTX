@@ -1,3 +1,7 @@
+public final class BlaKt {
+	public static final fun publicjvmapi ()V
+}
+
 public final class co/zsmb/requirektx/BundleArrayListKt {
 	public static final fun getIntegerArrayListOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/util/ArrayList;
 	public static final fun getStringArrayListOrNull (Landroidx/core/bundle/Bundle;Ljava/lang/String;)Ljava/util/ArrayList;
