@@ -24,6 +24,12 @@ class NavBackStackEntryTest : RoboTest() {
 
         val entry = createNavBackstackEntry(arguments = argBundle)
 
-        assertEquals(argBundle.keySet(), entry.requireArguments().keySet())
+        val args = entry.requireArguments()
+
+        assertEquals(argBundle.keySet(), args.keySet())
+        argBundle.keySet().forEach { key ->
+            @Suppress("DEPRECATION")
+            assertEquals(argBundle[key], args[key])
+        }
     }
 }
