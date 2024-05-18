@@ -15,7 +15,7 @@ jobs:
           distribution: 'zulu'
           java-version: 21
       - name: Release build
-        run: ./gradlew assembleRelease -x :app:assembleRelease
+        run: ./gradlew assembleRelease -x :sample:assembleRelease
       - name: Publish to MavenCentral
         run: ./gradlew publishToMavenCentral
         env:
