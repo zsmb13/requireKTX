@@ -2,16 +2,14 @@
 androidx-activityCompose = "1.9.0"
 agp = "8.2.2"
 androidTools = "31.4.0"
-appcompat = "1.6.1"
 binary-compat-validator = "0.15.0-Beta.2"
 compose-multiplatform = "1.6.10-rc03"
-core-ktx = "1.13.1"
-core-bundle = "1.0.0-rc01"
+core-bundle = "1.0.0-rc03"
 junit = "4.13.2"
-junit-jupiter-api = "5.9.2"
+junit-jupiter-api = "5.10.2"
 kotlin = "2.0.0-RC3"
 maven-publish = "0.28.0"
-navigationCompose = "2.7.0-alpha04"
+navigationCompose = "2.7.0-alpha06"
 robolectric = "4.12.1"
 work-runtime = "2.9.0"
 
@@ -19,9 +17,7 @@ work-runtime = "2.9.0"
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 core-bundle = { module = "org.jetbrains.androidx.core:core-bundle", version.ref = "core-bundle" }
-core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
 junit = { module = "junit:junit", version.ref = "junit" }
 junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit-jupiter-api" }
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit-jupiter-api" }
