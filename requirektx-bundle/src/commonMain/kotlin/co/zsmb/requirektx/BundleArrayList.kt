@@ -28,8 +28,8 @@ public inline fun Bundle.requireCharSequenceArrayList(key: String): ArrayList<Ch
 
 /**
  * Returns the value associated with the given key, or null if the key doesn't exist,
-* or the stored value is of the wrong type.
-*/
+ * or the stored value is of the wrong type.
+ */
 public inline fun Bundle.getCharSequenceArrayListOrNull(key: String): ArrayList<CharSequence>? = getOrNullImpl(key)
 
 /**
