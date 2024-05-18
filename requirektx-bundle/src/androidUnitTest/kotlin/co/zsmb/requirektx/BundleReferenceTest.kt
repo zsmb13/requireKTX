@@ -3,12 +3,9 @@ package co.zsmb.requirektx
 import android.location.Location
 import android.net.Uri
 import android.os.Binder
-import android.os.Bundle
-import android.util.Size
-import android.util.SizeF
+import androidx.core.bundle.Bundle
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertThrows
-import org.junit.Ignore
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
@@ -16,7 +13,7 @@ import java.util.Calendar
 import java.util.UUID
 
 @RunWith(RobolectricTestRunner::class)
-internal class BundleReferenceTest {
+internal class BundleReferenceTestAndroid {
 
     // Parcelables
     private val testParcelable1: Uri

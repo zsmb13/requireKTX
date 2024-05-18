@@ -16,5 +16,14 @@ jobs:
           java-version: 21
       - name: Debug build
         run: ./gradlew assembleDebug --stacktrace
+      - name: API check
+        run: ./gradlew apiCheck
       - name: Unit test
-        run: ./gradlew testDebugUnitTest --stacktrace
+        run: ./gradlew allTests test --stacktrace
+        env:
+          IS_CI_TEST: yup
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: '*/build/reports/tests'

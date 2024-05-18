@@ -1,0 +1,34 @@
+public final class co/zsmb/requirektx/DataArraysKt {
+	public static final fun getBooleanArrayOrNull (Landroidx/work/Data;Ljava/lang/String;)[Z
+	public static final fun getByteArrayOrNull (Landroidx/work/Data;Ljava/lang/String;)[B
+	public static final fun getDoubleArrayOrNull (Landroidx/work/Data;Ljava/lang/String;)[D
+	public static final fun getFloatArrayOrNull (Landroidx/work/Data;Ljava/lang/String;)[F
+	public static final fun getIntArrayOrNull (Landroidx/work/Data;Ljava/lang/String;)[I
+	public static final fun getLongArrayOrNull (Landroidx/work/Data;Ljava/lang/String;)[J
+	public static final fun getStringArrayOrNull (Landroidx/work/Data;Ljava/lang/String;)[Ljava/lang/String;
+	public static final fun requireBooleanArray (Landroidx/work/Data;Ljava/lang/String;)[Z
+	public static final fun requireByteArray (Landroidx/work/Data;Ljava/lang/String;)[B
+	public static final fun requireDoubleArray (Landroidx/work/Data;Ljava/lang/String;)[D
+	public static final fun requireFloatArray (Landroidx/work/Data;Ljava/lang/String;)[F
+	public static final fun requireIntArray (Landroidx/work/Data;Ljava/lang/String;)[I
+	public static final fun requireLongArray (Landroidx/work/Data;Ljava/lang/String;)[J
+	public static final fun requireStringArray (Landroidx/work/Data;Ljava/lang/String;)[Ljava/lang/String;
+}
+
+public final class co/zsmb/requirektx/DataValuesKt {
+	public static final fun getBooleanOrNull (Landroidx/work/Data;Ljava/lang/String;)Ljava/lang/Boolean;
+	public static final fun getByteOrNull (Landroidx/work/Data;Ljava/lang/String;)Ljava/lang/Byte;
+	public static final fun getDoubleOrNull (Landroidx/work/Data;Ljava/lang/String;)Ljava/lang/Double;
+	public static final fun getFloatOrNull (Landroidx/work/Data;Ljava/lang/String;)Ljava/lang/Float;
+	public static final fun getIntOrNull (Landroidx/work/Data;Ljava/lang/String;)Ljava/lang/Integer;
+	public static final fun getLongOrNull (Landroidx/work/Data;Ljava/lang/String;)Ljava/lang/Long;
+	public static final fun getStringOrNull (Landroidx/work/Data;Ljava/lang/String;)Ljava/lang/String;
+	public static final fun requireBoolean (Landroidx/work/Data;Ljava/lang/String;)Z
+	public static final fun requireByte (Landroidx/work/Data;Ljava/lang/String;)B
+	public static final fun requireDouble (Landroidx/work/Data;Ljava/lang/String;)D
+	public static final fun requireFloat (Landroidx/work/Data;Ljava/lang/String;)F
+	public static final fun requireInt (Landroidx/work/Data;Ljava/lang/String;)I
+	public static final fun requireLong (Landroidx/work/Data;Ljava/lang/String;)J
+	public static final fun requireString (Landroidx/work/Data;Ljava/lang/String;)Ljava/lang/String;
+}
+

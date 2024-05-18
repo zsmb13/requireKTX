@@ -3,7 +3,7 @@ package co.zsmb.requirektx
 import android.content.Intent
 import android.location.Location
 import android.net.Uri
-import android.os.Bundle
+import androidx.core.bundle.Bundle
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertThrows
 import org.junit.Test
