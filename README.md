@@ -69,12 +69,12 @@ There are several artifacts you can import depending on which types you want to 
 ```kotlin
 dependencies {
     // commonMain or Android
-    implementation("co.zsmb:requirektx-bundle:2.0.0-alpha01")
-    implementation("co.zsmb:requirektx-navigation:2.0.0-alpha01")
+    implementation("co.zsmb:requirektx-bundle:2.0.0-alpha02")
+    implementation("co.zsmb:requirektx-navigation:2.0.0-alpha02")
 
     // Android only
-    implementation("co.zsmb:requirektx-intent:2.0.0-alpha01")
-    implementation("co.zsmb:requirektx-work:2.0.0-alpha01")
+    implementation("co.zsmb:requirektx-intent:2.0.0-alpha02")
+    implementation("co.zsmb:requirektx-work:2.0.0-alpha02")
 }
 ```
 
