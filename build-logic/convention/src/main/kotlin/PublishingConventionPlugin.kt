@@ -12,7 +12,7 @@ class PublishingConventionPlugin : Plugin<Project> {
             }
 
             configure<MavenPublishBaseExtension> {
-                publishToMavenCentral(SonatypeHost.DEFAULT)
+                publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
                 signAllPublications()
 
                 pom {
