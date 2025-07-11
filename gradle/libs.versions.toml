@@ -7,7 +7,7 @@ compose-multiplatform = "1.8.2"
 core-bundle = "1.0.0"
 junit = "4.13.2"
 junit-jupiter-api = "5.10.2"
-kotlin = "2.0.20"
+kotlin = "2.2.0"
 maven-publish = "0.29.0"
 navigationCompose = "2.9.0-beta03"
 robolectric = "4.12.2"
@@ -33,7 +33,6 @@ work-runtime = { module = "androidx.work:work-runtime", version.ref = "work-runt
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
-binaryCompatValidator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "binary-compat-validator" }
 composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }

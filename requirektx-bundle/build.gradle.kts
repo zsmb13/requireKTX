@@ -21,4 +21,9 @@ kotlin {
             }
         }
     }
+
+    // This works
+    abiValidation {
+
+    }
 }

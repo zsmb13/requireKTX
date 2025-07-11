@@ -2,8 +2,11 @@ import com.android.build.gradle.LibraryExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.*
+import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.creating
+import org.gradle.kotlin.dsl.getValue
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformType
 
@@ -56,6 +59,11 @@ class KmpLibraryConventionPlugin : Plugin<Project> {
                 compilerOptions {
                     freeCompilerArgs.add("-progressive")
                 }
+
+                // This is unresolved / doesn't import
+                abiValidation {
+
+                }
             }
 
             configure<LibraryExtension> {
@@ -74,10 +82,8 @@ class KmpLibraryConventionPlugin : Plugin<Project> {
     private fun KotlinMultiplatformExtension.configureAndroid() {
         androidTarget {
             publishLibraryVariants("release")
-            compilations.all {
-                kotlinOptions {
-                    jvmTarget = JavaVersion.VERSION_1_8.toString()
-                }
+            compilerOptions {
+                jvmTarget.set(JvmTarget.JVM_1_8)
             }
         }
     }
